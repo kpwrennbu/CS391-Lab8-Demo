@@ -19,8 +19,9 @@ export default function AddFood() {
     // TODO(1): Insert a new row into the "foods" table with
     // fields { name, calories: cals, quantity: qty } using supabase.from().insert()
     // const { error } = await supabase ... YOUR CODE HERE ...
+   // ANSWER ---
 
-    const { error } = await supabase.from('foods').insert({ name, calories: cals, quantity: qty }) // ANSWER
+
     if (error) setMessage(error.message)
     else {
       setMessage('Added!')

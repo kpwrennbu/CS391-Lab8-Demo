@@ -10,7 +10,7 @@ export default function Inventory() {
   async function load() {
     // TODO(2): Select all rows from "foods" ordered by created_at desc
     // const { data, error } = await supabase ... YOUR CODE HERE ...
-    const { data, error } = await supabase.from('foods').select('*').order('created_at', { ascending: false }) // ANSWER
+    
     if (error) console.error(error)
     setItems(data || [])
   }
@@ -28,7 +28,8 @@ export default function Inventory() {
     // TODO(3): Decrement the quantity by 1 for the selected row.
     // Use supabase.from('foods').update({ quantity: item.quantity - 1 }).eq('id', selectedId)
     // const { error } = await supabase ... YOUR CODE HERE ...
-    const { error } = await supabase.from('foods').update({ quantity: item.quantity - 1 }).eq('id', selectedId) // ANSWER
+
+
     if (error) setMessage(error.message)
     else {
       setMessage('Reserved!')
